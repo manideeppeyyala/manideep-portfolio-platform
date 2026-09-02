@@ -87,7 +87,13 @@ export function Hero({
     >
       {/* Constellation field */}
       {hero.showParticles && (
-        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 opacity-70">
+        {/*
+          Full opacity: the canvas already tunes its own alpha per element
+          (ambient links are faint, cursor links are bright). Dimming the
+          whole layer here muted the cursor interaction that's meant to be
+          the noticeable part.
+        */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <Particles />
         </div>
       )}

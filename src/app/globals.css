@@ -10,55 +10,67 @@
 
 @theme {
   /* ----------------------------------------------------------------
-     Brand: ink (the dark surface)
+     Brand: deep forest green (the dark surface)
 
      Token names stay `navy-*` so every component keeps working; the
      values are what define the identity. Changing the palette means
      editing values here and nowhere else.
      ---------------------------------------------------------------- */
-  --color-navy-50: oklch(96% 0.012 280);
-  --color-navy-100: oklch(90% 0.025 280);
-  --color-navy-200: oklch(78% 0.05 280);
-  --color-navy-300: oklch(64% 0.09 280);
-  --color-navy-400: oklch(56% 0.14 280);
-  --color-navy-500: oklch(45% 0.15 279);
-  --color-navy-600: oklch(36% 0.13 278);
-  --color-navy-700: oklch(27% 0.09 278);
-  --color-navy-800: oklch(21% 0.06 278);
-  --color-navy-900: oklch(16% 0.04 277);
-  --color-navy-950: oklch(11% 0.028 276);
+  --color-navy-50: oklch(96% 0.02 150);
+  --color-navy-100: oklch(90% 0.04 150);
+  --color-navy-200: oklch(78% 0.07 152);
+  --color-navy-300: oklch(64% 0.10 152);
+  --color-navy-400: oklch(55% 0.12 153);
+  --color-navy-500: oklch(45% 0.11 152);
+  --color-navy-600: oklch(36% 0.09 152);
+  --color-navy-700: oklch(27% 0.07 152);
+  --color-navy-800: oklch(21% 0.055 151);
+  --color-navy-900: oklch(16% 0.042 150);
+  --color-navy-950: oklch(10% 0.028 150);
 
-  /* ---------- Brand: electric violet (the accent) ---------- */
-  --color-gold-100: oklch(95% 0.04 295);
-  --color-gold-200: oklch(88% 0.09 293);
-  --color-gold-300: oklch(80% 0.15 292);
-  --color-gold-400: oklch(72% 0.20 291);
-  --color-gold-500: oklch(64% 0.22 290);
-  --color-gold-600: oklch(55% 0.21 289);
+  /* ---------- Brand: gold (the accent) ---------- */
+  --color-gold-100: oklch(96% 0.06 90);
+  --color-gold-200: oklch(92% 0.11 88);
+  --color-gold-300: oklch(87% 0.145 87);
+  --color-gold-400: oklch(82% 0.16 86);
+  --color-gold-500: oklch(74% 0.155 84);
+  --color-gold-600: oklch(65% 0.145 82);
+
+  /* ----------------------------------------------------------------
+     Cherry red — the third voice.
+
+     Used for emphasis and highlight moments, never for errors (those
+     stay `--color-destructive`), so a red accent never reads as a
+     warning.
+     ---------------------------------------------------------------- */
+  --color-cherry-300: oklch(72% 0.19 22);
+  --color-cherry-400: oklch(63% 0.22 22);
+  --color-cherry-500: oklch(55% 0.21 22);
 
   /* ---------- Glints: used only by the sparkle animations ---------- */
-  --color-glint-cyan: oklch(84% 0.13 205);
-  --color-glint-amber: oklch(86% 0.14 82);
-  --color-glint-violet: oklch(80% 0.16 295);
+  --color-glint-cyan: oklch(88% 0.10 160);
+  --color-glint-amber: oklch(88% 0.14 88);
+  --color-glint-violet: oklch(72% 0.19 22);
 
   /* ---------- Semantic (light surface) ---------- */
-  --color-background: oklch(99% 0.003 285);
-  --color-foreground: oklch(18% 0.03 280);
+  /* Light ground: clean white with the faintest green cast. */
+  --color-background: oklch(99.2% 0.003 150);
+  --color-foreground: oklch(15% 0.02 150);
   --color-card: oklch(100% 0 0);
-  --color-card-foreground: oklch(18% 0.03 280);
-  --color-muted: oklch(96% 0.008 285);
-  --color-muted-foreground: oklch(50% 0.025 282);
-  --color-border: oklch(91% 0.012 285);
-  --color-input: oklch(93% 0.01 285);
+  --color-card-foreground: oklch(15% 0.02 150);
+  --color-muted: oklch(96.5% 0.008 150);
+  --color-muted-foreground: oklch(48% 0.02 152);
+  --color-border: oklch(90% 0.012 150);
+  --color-input: oklch(93% 0.01 150);
 
-  --color-primary: oklch(45% 0.16 279);
-  --color-primary-foreground: oklch(99% 0.004 285);
-  --color-primary-deep: oklch(30% 0.12 278);
-  --color-primary-glow: oklch(62% 0.20 283);
+  --color-primary: oklch(33% 0.085 152);
+  --color-primary-foreground: oklch(99% 0.004 150);
+  --color-primary-deep: oklch(21% 0.055 151);
+  --color-primary-glow: oklch(52% 0.12 153);
 
-  --color-accent: oklch(72% 0.20 291);
-  --color-accent-foreground: oklch(15% 0.05 285);
-  --color-accent-glow: oklch(82% 0.15 293);
+  --color-accent: oklch(82% 0.16 86);
+  --color-accent-foreground: oklch(16% 0.04 150);
+  --color-accent-glow: oklch(90% 0.13 88);
 
   --color-success: oklch(65% 0.17 150);
   --color-warning: oklch(75% 0.16 70);
@@ -88,44 +100,49 @@
 
 /* Non-color tokens Tailwind v4 doesn't namespace for us */
 :root {
-  --shadow-elegant: 0 25px 60px -25px oklch(16% 0.04 277 / 0.42);
-  --shadow-glow: 0 0 60px oklch(62% 0.20 283 / 0.4);
-  --shadow-gold: 0 10px 40px -10px oklch(72% 0.20 291 / 0.5);
-  --shadow-card: 0 1px 2px oklch(16% 0.04 277 / 0.05),
-    0 10px 30px -10px oklch(16% 0.04 277 / 0.12);
-  --shadow-lift: 0 20px 50px -20px oklch(16% 0.04 277 / 0.3);
+  --shadow-elegant: 0 25px 60px -25px oklch(16% 0.042 150 / 0.42);
+  --shadow-glow: 0 0 60px oklch(52% 0.12 153 / 0.4);
+  --shadow-gold: 0 10px 40px -10px oklch(82% 0.16 86 / 0.5);
+  --shadow-card: 0 1px 2px oklch(16% 0.042 150 / 0.05),
+    0 10px 30px -10px oklch(16% 0.042 150 / 0.12);
+  --shadow-lift: 0 20px 50px -20px oklch(16% 0.042 150 / 0.3);
 
   --glass-bg: oklch(100% 0 0 / 0.72);
   --glass-border: oklch(100% 0 0 / 0.4);
-  --glass-dark-bg: oklch(16% 0.04 277 / 0.5);
+  --glass-dark-bg: oklch(16% 0.042 150 / 0.5);
   --glass-dark-border: oklch(100% 0 0 / 0.12);
 
-  /* Deep surface: ink base, violet bloom top-right, cyan whisper bottom-left. */
+  /* Deep surface: near-black green, gold bloom top-right, cherry glow low-left. */
   --gradient-hero: radial-gradient(
       1200px 620px at 82% -12%,
-      oklch(62% 0.20 283 / 0.32),
+      oklch(82% 0.16 86 / 0.20),
       transparent 62%
     ),
-    radial-gradient(900px 520px at 0% 108%, oklch(84% 0.13 205 / 0.14), transparent 64%),
+    radial-gradient(900px 520px at 0% 108%, oklch(63% 0.22 22 / 0.16), transparent 64%),
     linear-gradient(
       140deg,
-      oklch(11% 0.028 276) 0%,
-      oklch(16% 0.042 278) 54%,
-      oklch(23% 0.075 281) 100%
+      oklch(9% 0.022 150) 0%,
+      oklch(14% 0.038 150) 54%,
+      oklch(20% 0.06 152) 100%
     );
   --gradient-gold: linear-gradient(
     135deg,
-    oklch(72% 0.20 291),
-    oklch(82% 0.15 293)
+    oklch(82% 0.16 86),
+    oklch(92% 0.12 90)
   );
-  --gradient-text: linear-gradient(135deg, oklch(100% 0 0), oklch(80% 0.16 293));
+  --gradient-cherry: linear-gradient(
+    135deg,
+    oklch(63% 0.22 22),
+    oklch(72% 0.19 28)
+  );
+  --gradient-text: linear-gradient(135deg, oklch(100% 0 0), oklch(87% 0.145 87));
 
   /* The two section grounds the whole page alternates between. */
   --surface-deep: var(--gradient-hero);
   --surface-soft: linear-gradient(
     180deg,
-    oklch(99% 0.003 285) 0%,
-    oklch(97% 0.009 288) 100%
+    oklch(99.2% 0.003 150) 0%,
+    oklch(97% 0.008 150) 100%
   );
 
   --nav-h: 4.25rem;
@@ -547,4 +564,19 @@ body {
 
 .shine-on-hover:hover::after {
   background-position: 180% 0;
+}
+
+
+/* Cherry accents — emphasis, never error state. */
+@utility text-cherry {
+  color: var(--color-cherry-400);
+}
+
+@utility bg-cherry {
+  background: var(--color-cherry-400);
+  color: oklch(99% 0.004 150);
+}
+
+@utility bg-gradient-cherry {
+  background: var(--gradient-cherry);
 }

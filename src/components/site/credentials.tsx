@@ -1,21 +1,23 @@
 /**
- * Certifications, Services and Testimonials.
+ * Certifications and Testimonials.
  *
- * Grouped because they share one card language; each is independently
- * toggleable from Admin → Sections and returns null when empty, so a
- * disabled or unpopulated section never leaves a blank band on the page.
+ * Certifications sit on a deep band in a three-column grid, mirroring the
+ * reference's "funded work" flow — issuer, dates, credential ID and a
+ * verification link where one exists.
+ *
+ * Each returns null when empty, so a disabled or unpopulated section never
+ * leaves a blank band on the page.
  */
 
 import { Award, ExternalLink, Quote, Star } from "lucide-react";
-import type { Certification, Service, Testimonial } from "@/lib/schema";
+import type { Certification, Testimonial } from "@/lib/schema";
 import { live, livePublished } from "@/lib/schema";
 import { DarkCard, IconTile, SectionHeader, TagPill } from "@/components/ui";
 import { formatDate, initials } from "@/lib/utils";
 import { Reveal } from "./motion";
-import { ContentIcon } from "./content-icon";
 
 /* ------------------------------------------------------------------ */
-/* Certifications                                                      */
+/* Certifications — deep band                                          */
 /* ------------------------------------------------------------------ */
 
 export function CertificationsSection({ certifications }: { certifications: Certification[] }) {
@@ -25,25 +27,15 @@ export function CertificationsSection({ certifications }: { certifications: Cert
   return (
     <section
       id="certifications"
-      className="section-y relative overflow-hidden bg-navy-900 text-primary-foreground"
+      className="bg-deep grid-bg relative isolate overflow-hidden section-y"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-
       <div className="container-page relative">
         <Reveal>
           <SectionHeader
             tone="dark"
             eyebrow="Certifications"
-            title="Credentials & recognition."
-            description="Certifications, workshops and published research."
+            title="Credentials & published research."
+            description="Certifications from Anthropic and Databricks, workshops, and peer-reviewed work presented at IEEE."
           />
         </Reveal>
 
@@ -55,10 +47,7 @@ export function CertificationsSection({ certifications }: { certifications: Cert
                   <IconTile>
                     <Award size={22} aria-hidden />
                   </IconTile>
-
-                  {cert.category && (
-                    <TagPill>{cert.category}</TagPill>
-                  )}
+                  {cert.category && <TagPill>{cert.category}</TagPill>}
                 </div>
 
                 <h3 className="mt-5 text-base font-bold leading-snug text-primary-foreground">
@@ -88,7 +77,6 @@ export function CertificationsSection({ certifications }: { certifications: Cert
                       ID {cert.credentialId}
                     </p>
                   )}
-
                   {cert.credentialUrl && (
                     <a
                       href={cert.credentialUrl}
@@ -111,69 +99,7 @@ export function CertificationsSection({ certifications }: { certifications: Cert
 }
 
 /* ------------------------------------------------------------------ */
-/* Services                                                            */
-/* ------------------------------------------------------------------ */
-
-export function ServicesSection({ services }: { services: Service[] }) {
-  const items = livePublished(services);
-  if (!items.length) return null;
-
-  return (
-    <section id="services" className="section-y bg-muted/40">
-      <div className="container-page">
-        <Reveal>
-          <SectionHeader
-            eyebrow="Services"
-            title="What I can help with."
-            description="The kinds of problems I'm set up to solve."
-          />
-        </Reveal>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((service, index) => (
-            <Reveal key={service.id} delay={Math.min(index * 0.06, 0.3)}>
-              <article className="group h-full rounded-3xl border border-border bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-2 hover:border-primary-glow/40 hover:shadow-lift">
-                <IconTile>
-                  <ContentIcon name={service.icon} size={22} />
-                </IconTile>
-
-                <h3 className="mt-5 text-lg font-bold tracking-tight text-foreground">
-                  {service.title}
-                </h3>
-
-                {service.description && (
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </p>
-                )}
-
-                {service.features.length > 0 && (
-                  <ul className="mt-5 space-y-2">
-                    {service.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex gap-2.5 text-sm text-muted-foreground"
-                      >
-                        <span
-                          aria-hidden
-                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                        />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* Testimonials                                                        */
+/* Testimonials — light band                                           */
 /* ------------------------------------------------------------------ */
 
 export function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) {
@@ -181,14 +107,10 @@ export function TestimonialsSection({ testimonials }: { testimonials: Testimonia
   if (!items.length) return null;
 
   return (
-    <section id="testimonials" className="section-y bg-background">
+    <section id="testimonials" className="bg-soft relative overflow-hidden section-y">
       <div className="container-page">
         <Reveal>
-          <SectionHeader
-            eyebrow="Testimonials"
-            title="What people say."
-            align="center"
-          />
+          <SectionHeader eyebrow="Testimonials" title="What people say." align="center" />
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

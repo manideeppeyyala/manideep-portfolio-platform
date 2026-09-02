@@ -107,10 +107,11 @@ export function ContactSection({
     );
 
   return (
-    <section id="contact" className="section-y bg-background">
-      <div className="container-page">
+    <section id="contact" className="bg-deep grid-bg relative isolate overflow-hidden section-y">
+      <div className="container-page relative">
         <Reveal>
           <SectionHeader
+            tone="dark"
             eyebrow={contact.eyebrow}
             title={contact.heading}
             description={contact.description}
@@ -122,9 +123,9 @@ export function ContactSection({
           <Reveal delay={0.08}>
             <div className="space-y-4">
               {settings.availabilityStatus && (
-                <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 shadow-card">
+                <div className="glass-dark inline-flex items-center gap-2.5 rounded-full px-4 py-2">
                   <StatusDot active={settings.availabilityOpen} />
-                  <span className="text-sm font-semibold text-foreground">
+                  <span className="text-sm font-semibold text-primary-foreground">
                     {settings.availabilityStatus}
                   </span>
                 </div>
@@ -133,23 +134,23 @@ export function ContactSection({
               <ul className="space-y-3">
                 {details.map((item) => (
                   <li key={item.label}>
-                    <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift">
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-accent">
+                    <div className="glass-dark flex items-center gap-4 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40">
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-gold text-accent-foreground">
                         <item.icon size={18} aria-hidden />
                       </span>
                       <span className="min-w-0">
-                        <span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        <span className="block text-xs font-semibold uppercase tracking-wider text-primary-foreground/45">
                           {item.label}
                         </span>
                         {item.href ? (
                           <a
                             href={item.href}
-                            className="block truncate text-sm font-medium text-foreground hover:text-primary"
+                            className="block truncate text-sm font-medium text-primary-foreground hover:text-accent"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <span className="block truncate text-sm font-medium text-foreground">
+                          <span className="block truncate text-sm font-medium text-primary-foreground">
                             {item.value}
                           </span>
                         )}
@@ -160,7 +161,7 @@ export function ContactSection({
               </ul>
 
               {settings.responseTime && (
-                <p className="text-sm text-muted-foreground">{settings.responseTime}</p>
+                <p className="text-sm text-primary-foreground/55">{settings.responseTime}</p>
               )}
 
               {visibleSocials.length > 0 && (
@@ -172,7 +173,7 @@ export function ContactSection({
                         target={social.url.startsWith("http") ? "_blank" : undefined}
                         rel={social.url.startsWith("http") ? "noopener noreferrer" : undefined}
                         aria-label={social.label || social.platform}
-                        className="grid h-11 w-11 place-items-center rounded-xl border border-border bg-card text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary-glow/50 hover:text-primary"
+                        className="grid h-11 w-11 place-items-center rounded-xl border border-white/15 text-primary-foreground/70 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:text-accent"
                       >
                         <SocialIcon name={social.icon || social.platform} size={18} />
                       </a>
@@ -186,7 +187,7 @@ export function ContactSection({
           {/* ---- Form ---- */}
           {contact.formEnabled && (
             <Reveal delay={0.14}>
-              <div className="rounded-3xl border border-border bg-card p-6 shadow-card sm:p-8">
+              <div className="rounded-3xl border border-border bg-card p-6 shadow-elegant sm:p-8">
                 {state === "success" ? (
                   <div className="flex flex-col items-center justify-center py-14 text-center">
                     <span className="grid h-16 w-16 place-items-center rounded-full bg-success/10 text-success">

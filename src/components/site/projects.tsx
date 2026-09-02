@@ -1,26 +1,28 @@
 "use client";
 
 /**
- * Projects grid with category + technology filtering and search.
+ * Work & Research — light band, filterable vertical timeline.
  *
- * Filtering is client-side over the already-rendered published set: a
- * portfolio has tens of projects, so a round-trip per keystroke would be
- * slower and worse. Cards link to real routes (`/projects/[slug]`) rather
- * than opening a modal, so every case study is linkable, shareable and
- * independently indexable by search engines.
+ * Follows the reference's publications flow rather than a card grid: a
+ * filter chip row, a live search, then a rail of entries each marked with
+ * a dot, a year badge, a category badge and accent tags.
+ *
+ * Filtering is client-side over the already-rendered published set — a
+ * portfolio has tens of entries, so a round-trip per keystroke would be
+ * slower and worse. Each entry still links to its own real case-study
+ * route, so every project stays linkable and indexable.
  */
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Search, Star } from "lucide-react";
-import { SocialIcon } from "./social-icon";
+import { ArrowUpRight, ExternalLink, Search } from "lucide-react";
 import type { Project } from "@/lib/schema";
 import { livePublished } from "@/lib/schema";
-import { EmptyState, SectionHeader, TagPill } from "@/components/ui";
+import { EmptyState, SectionHeader } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./motion";
+import { SocialIcon } from "./social-icon";
 
 const ALL = "All";
 
@@ -41,41 +43,41 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
     return published.filter((p) => {
       if (category !== ALL && p.category !== category) return false;
       if (!q) return true;
-      const haystack = [p.title, p.shortDescription, p.category, ...p.technologies, ...p.tags]
+      return [p.title, p.shortDescription, p.category, ...p.technologies, ...p.tags]
         .join(" ")
-        .toLowerCase();
-      return haystack.includes(q);
+        .toLowerCase()
+        .includes(q);
     });
   }, [published, category, query]);
 
   if (!published.length) return null;
 
   return (
-    <section id="projects" className="section-y bg-background">
+    <section id="projects" className="bg-soft relative overflow-hidden section-y">
       <div className="container-page">
         <Reveal>
           <SectionHeader
-            eyebrow="Projects"
+            eyebrow="Work & Research"
             title="Selected work."
-            description="Systems I've designed, built and shipped — with the reasoning behind them."
+            description="A searchable, filterable timeline of the systems I've built and the research I've published."
           />
         </Reveal>
 
         {/* Controls */}
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div role="tablist" aria-label="Filter projects by category" className="flex flex-wrap gap-2">
+            <div role="tablist" aria-label="Filter work by category" className="flex flex-wrap gap-2">
               {categories.map((cat) => {
-                const isActive = category === cat;
+                const active = category === cat;
                 return (
                   <button
                     key={cat}
                     role="tab"
-                    aria-selected={isActive}
+                    aria-selected={active}
                     onClick={() => setCategory(cat)}
                     className={cn(
                       "rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300",
-                      isActive
+                      active
                         ? "bg-primary text-primary-foreground shadow-glow"
                         : "border border-border bg-card text-muted-foreground hover:text-foreground"
                     )}
@@ -96,71 +98,62 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search projects…"
-                aria-label="Search projects"
+                placeholder="Search work…"
+                aria-label="Search work"
                 className="h-10 w-full rounded-full border border-border bg-card pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary-glow focus:outline-none"
               />
             </div>
           </div>
         </Reveal>
 
-        {/* Grid */}
+        {/* Timeline */}
         {shown.length === 0 ? (
           <EmptyState
             className="mt-10"
-            title="No projects match that filter"
+            title="Nothing matches that filter"
             description="Try a different category or clear the search."
           />
         ) : (
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ol className="relative mt-12 space-y-5 md:border-l md:border-border md:pl-0">
             {shown.map((project, i) => (
-              <motion.article
+              <motion.li
                 key={project.id}
                 layout={!reduced}
-                initial={reduced ? false : { opacity: 0, y: 20 }}
+                initial={reduced ? false : { opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: reduced ? 0 : Math.min(i * 0.05, 0.3) }}
-                className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:border-primary-glow/40 hover:shadow-lift"
+                className="relative md:pl-12"
               >
-                {/* Cover */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-hero">
-                  {project.coverImage ? (
-                    <Image
-                      src={project.coverImage}
-                      alt=""
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="grid h-full place-items-center">
-                      <span className="px-6 text-center text-2xl font-black leading-tight tracking-tight text-primary-foreground/25">
-                        {project.title}
-                      </span>
-                    </div>
-                  )}
+                {/* Rail marker */}
+                <span
+                  aria-hidden
+                  className="absolute left-0 top-7 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-accent ring-4 ring-accent/20 md:block"
+                />
 
-                  {project.featured && (
-                    <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-accent-foreground shadow-gold">
-                      <Star size={11} aria-hidden fill="currentColor" />
-                      Featured
-                    </span>
-                  )}
-                </div>
-
-                {/* Body */}
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-glow">
-                    {project.category}
+                <div className="group rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary-glow/40 hover:shadow-lift">
+                  {/* Badge row */}
+                  <div className="flex flex-wrap items-center gap-2 text-xs">
                     {project.year && (
-                      <>
-                        <span aria-hidden className="text-border">·</span>
-                        <span className="text-muted-foreground">{project.year}</span>
-                      </>
+                      <span className="rounded-full bg-primary px-2.5 py-0.5 font-semibold text-primary-foreground">
+                        {project.year}
+                      </span>
                     )}
+                    {project.category && (
+                      <span className="rounded-full border border-border px-2.5 py-0.5 text-muted-foreground">
+                        {project.category}
+                      </span>
+                    )}
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
 
-                  <h3 className="mt-2.5 text-lg font-bold leading-snug tracking-tight text-foreground">
+                  <h3 className="mt-3.5 text-lg font-bold leading-snug tracking-tight text-foreground">
                     <Link
                       href={`/projects/${project.slug}`}
                       className="after:absolute after:inset-0 hover:text-primary"
@@ -170,28 +163,17 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   </h3>
 
                   {project.shortDescription && (
-                    <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {project.shortDescription}
                     </p>
                   )}
 
-                  {project.technologies.length > 0 && (
-                    <ul className="mt-5 flex flex-wrap gap-1.5">
-                      {project.technologies.slice(0, 4).map((tech) => (
-                        <li key={tech}>
-                          <TagPill tone="muted">{tech}</TagPill>
-                        </li>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <li>
-                          <TagPill tone="muted">+{project.technologies.length - 4}</TagPill>
-                        </li>
-                      )}
-                    </ul>
-                  )}
+                  <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                    {project.role && (
+                      <span className="text-xs text-muted-foreground/80">{project.role}</span>
+                    )}
 
-                  <div className="mt-auto flex items-center gap-4 pt-6">
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    <span className="ml-auto inline-flex items-center gap-1.5 font-semibold text-primary">
                       View case study
                       <ArrowUpRight
                         size={15}
@@ -200,23 +182,34 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                       />
                     </span>
 
+                    {/* z-10 keeps these above the card-wide link overlay */}
                     {project.githubUrl && (
-                      // z-10 keeps this above the card-wide link overlay.
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${project.title} on GitHub`}
-                        className="relative z-10 ml-auto text-muted-foreground transition-colors hover:text-foreground"
+                        className="relative z-10 text-muted-foreground transition-colors hover:text-foreground"
                       >
-                        <SocialIcon name="github" size={17} />
+                        <SocialIcon name="github" size={16} />
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${project.title} live site`}
+                        className="relative z-10 text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        <ExternalLink size={15} aria-hidden />
                       </a>
                     )}
                   </div>
                 </div>
-              </motion.article>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         )}
       </div>
     </section>

@@ -4,6 +4,9 @@
  * Sections render in the order the admin configured and only when enabled —
  * the page composes itself from `content.sections` rather than a fixed JSX
  * sequence, so reordering in the admin genuinely reorders the site.
+ *
+ * The visual flow deliberately alternates deep → soft → deep bands, which
+ * is what gives the page its rhythm; keep that in mind when reordering.
  */
 
 import type { ReactNode } from "react";
@@ -13,14 +16,11 @@ import { siteUrl } from "@/lib/utils";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { AboutSection } from "@/components/site/about";
+import { ExpertiseSection } from "@/components/site/expertise";
 import { SkillsSection } from "@/components/site/skills";
-import { ExperienceSection, EducationSection } from "@/components/site/experience";
+import { TimelineSection } from "@/components/site/timeline";
 import { ProjectsSection } from "@/components/site/projects";
-import {
-  CertificationsSection,
-  ServicesSection,
-  TestimonialsSection,
-} from "@/components/site/credentials";
+import { CertificationsSection, TestimonialsSection } from "@/components/site/credentials";
 import { ContactSection } from "@/components/site/contact";
 import { SiteFooter } from "@/components/site/footer";
 import { MaintenanceScreen } from "@/components/site/maintenance";
@@ -39,20 +39,33 @@ export default async function HomePage() {
   const socials = live(content.socialLinks);
   const featuredSocials = socials.filter((s) => s.featured);
 
-  /* Each section key maps to its rendered output; order comes from CMS. */
-  const registry: Record<SectionKey, ReactNode> = {
+  /*
+   * Each section key maps to its rendered output; order comes from the CMS.
+   *
+   * `experience` renders the merged experience + education timeline, and
+   * `education` is intentionally absent from the registry — merging them
+   * into one chronological rail reads as a single career story. The
+   * `education` key stays in the schema so its content remains editable.
+   */
+  const registry: Partial<Record<SectionKey, ReactNode>> = {
     hero: (
-      <Hero hero={hero} socials={featuredSocials} resume={content.resume} />
+      <Hero
+        hero={hero}
+        socials={featuredSocials}
+        resume={content.resume}
+        stats={live(about.stats)}
+      />
     ),
     about: <AboutSection about={about} />,
+    services: <ExpertiseSection services={content.services} />,
+    projects: <ProjectsSection projects={content.projects} />,
+    certifications: <CertificationsSection certifications={content.certifications} />,
     skills: (
       <SkillsSection skills={content.skills} categories={content.skillCategories} />
     ),
-    experience: <ExperienceSection experience={content.experience} />,
-    projects: <ProjectsSection projects={content.projects} />,
-    services: <ServicesSection services={content.services} />,
-    certifications: <CertificationsSection certifications={content.certifications} />,
-    education: <EducationSection education={content.education} />,
+    experience: (
+      <TimelineSection experience={content.experience} education={content.education} />
+    ),
     testimonials: <TestimonialsSection testimonials={content.testimonials} />,
     contact: (
       <ContactSection contact={content.contact} settings={settings} socials={socials} />
@@ -60,7 +73,7 @@ export default async function HomePage() {
   };
 
   const ordered = [...content.sections]
-    .filter((s) => s.enabled)
+    .filter((s) => s.enabled && registry[s.key])
     .sort((a, b) => a.order - b.order);
 
   /* Person structured data — improves how search engines read the page. */
@@ -78,9 +91,7 @@ export default async function HomePage() {
         address: settings.location
           ? { "@type": "PostalAddress", addressLocality: settings.location }
           : undefined,
-        sameAs: socials
-          .map((s) => s.url)
-          .filter((url) => url.startsWith("http")),
+        sameAs: socials.map((s) => s.url).filter((url) => url.startsWith("http")),
         knowsAbout: content.skills.filter((s) => s.featured).map((s) => s.name),
       }
     : null;
@@ -90,7 +101,7 @@ export default async function HomePage() {
       {personSchema && (
         <script
           type="application/ld+json"
-          // Content is our own CMS data, serialized — not user input.
+          // Our own CMS data, serialized — not user input.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       )}

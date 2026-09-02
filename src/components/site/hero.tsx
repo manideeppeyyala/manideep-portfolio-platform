@@ -1,22 +1,22 @@
 "use client";
 
 /**
- * Hero.
+ * Hero — full-viewport deep band, two columns, stat strip beneath.
  *
- * Composition mirrors the reference design's DNA: navy gradient field,
- * constellation particles, an eyebrow pill, an oversized black-weight
- * headline with a gold gradient on the accent word, a rotating role line,
- * and a three-tier CTA hierarchy — then the portrait.
+ * Composition follows the reference flow exactly: pill badge → oversized
+ * black-weight headline with a gradient on the surname → role line →
+ * intro → CTA row → portrait, then a bordered stat strip spanning the
+ * width as the transition into the page.
  *
- * Every string and image here comes from the CMS.
+ * Every string, number and image comes from the CMS.
  */
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowRight, Download } from "lucide-react";
 import { useReducedMotion } from "framer-motion";
-import type { Hero as HeroContent, Resume, SocialLink } from "@/lib/schema";
-import { buttonClass, EyebrowPill } from "@/components/ui";
+import type { Hero as HeroContent, Resume, SocialLink, Stat } from "@/lib/schema";
+import { buttonClass } from "@/components/ui";
 import { Entrance } from "./motion";
 import { Particles } from "./particles";
 import { SocialIcon } from "./social-icon";
@@ -34,33 +34,31 @@ function RoleTicker({ roles }: { roles: string[] }) {
     const full = roles[index % roles.length];
     const done = !deleting && text === full;
     const cleared = deleting && text === "";
-
     const delay = done ? 1900 : cleared ? 240 : deleting ? 34 : 62;
 
     const timer = setTimeout(() => {
-      if (done) {
-        setDeleting(true);
-      } else if (cleared) {
+      if (done) setDeleting(true);
+      else if (cleared) {
         setDeleting(false);
         setIndex((i) => (i + 1) % roles.length);
       } else {
-        setText((current) =>
-          deleting ? full.slice(0, current.length - 1) : full.slice(0, current.length + 1)
-        );
+        setText((c) => (deleting ? full.slice(0, c.length - 1) : full.slice(0, c.length + 1)));
       }
     }, delay);
 
     return () => clearTimeout(timer);
   }, [text, deleting, index, roles, reduced]);
 
-  if (reduced || roles.length <= 1) {
-    return <span>{roles.join(" · ")}</span>;
-  }
+  if (reduced || roles.length <= 1) return <span>{roles.join(" · ")}</span>;
 
   return (
     <span>
       <span aria-live="polite">{text}</span>
-      <span aria-hidden className="ml-0.5 inline-block w-0.5 animate-pulse-dot bg-accent align-middle" style={{ height: "1em" }} />
+      <span
+        aria-hidden
+        className="ml-0.5 inline-block w-0.5 animate-pulse-dot bg-accent align-middle"
+        style={{ height: "1em" }}
+      />
     </span>
   );
 }
@@ -69,10 +67,12 @@ export function Hero({
   hero,
   socials,
   resume,
+  stats,
 }: {
   hero: HeroContent;
   socials: SocialLink[];
   resume: Resume;
+  stats: Stat[];
 }) {
   const ctas = [
     { label: hero.primaryCtaLabel, href: hero.primaryCtaHref, variant: "primary" as const, icon: true },
@@ -81,55 +81,36 @@ export function Hero({
   ].filter((c) => c.label && c.href);
 
   return (
-    <section
-      id="top"
-      className="relative isolate overflow-hidden bg-gradient-hero text-primary-foreground"
-    >
-      {/*
-        Constellation field. Rendered at full opacity: the canvas already
-        tunes alpha per element (ambient links faint, cursor links bright),
-        so dimming the whole layer only muted the cursor interaction.
-      */}
+    <section id="top" className="bg-deep grid-bg relative isolate overflow-hidden">
+      {/* Constellation field — cursor-reactive */}
       {hero.showParticles && (
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <Particles />
         </div>
       )}
 
-      {/* Grid wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent)",
-        }}
-      />
-
-      <div className="container-page grid items-center gap-14 pb-20 pt-32 md:pb-28 md:pt-40 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:pb-32 lg:pt-44">
-        {/* ---- Copy ---- */}
+      {/* ---- Main two-column band ---- */}
+      <div className="container-page relative grid items-center gap-12 pb-20 pt-32 lg:grid-cols-2 lg:gap-16 lg:pb-24 lg:pt-44">
         <div>
           {hero.eyebrow && (
             <Entrance delay={0.05}>
-              <EyebrowPill>{hero.eyebrow}</EyebrowPill>
+              <span className="glass-dark inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-accent">
+                <span aria-hidden className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
+                {hero.eyebrow}
+              </span>
             </Entrance>
           )}
 
           <Entrance delay={0.14}>
-            <h1 className="mt-6 text-[clamp(2.75rem,7vw,4.75rem)] font-black leading-[1.03] tracking-[-0.03em]">
+            <h1 className="mt-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               {hero.name}{" "}
-              {hero.nameAccent && (
-                <span className="text-gradient-gold">{hero.nameAccent}</span>
-              )}
+              {hero.nameAccent && <span className="text-gradient-gold">{hero.nameAccent}</span>}
             </h1>
           </Entrance>
 
           {hero.titles.length > 0 && (
             <Entrance delay={0.22}>
-              <p className="mt-5 text-xl font-medium text-primary-foreground/85 sm:text-2xl">
+              <p className="mt-5 max-w-xl text-lg text-primary-foreground/80 sm:text-xl">
                 <RoleTicker roles={hero.titles} />
               </p>
             </Entrance>
@@ -137,7 +118,7 @@ export function Hero({
 
           {hero.intro && (
             <Entrance delay={0.3}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/65">
+              <p className="mt-6 max-w-xl leading-relaxed text-primary-foreground/60">
                 {hero.intro}
               </p>
             </Entrance>
@@ -183,7 +164,7 @@ export function Hero({
 
           {hero.showSocials && socials.length > 0 && (
             <Entrance delay={0.46}>
-              <ul className="mt-10 flex flex-wrap items-center gap-3">
+              <ul className="mt-9 flex flex-wrap items-center gap-3">
                 {socials.map((social) => (
                   <li key={social.id}>
                     <a
@@ -203,7 +184,7 @@ export function Hero({
           )}
         </div>
 
-        {/* ---- Portrait ---- */}
+        {/* Portrait */}
         {hero.image && (
           <Entrance delay={0.3} y={36} className="justify-self-center lg:justify-self-end">
             <div className="group relative">
@@ -230,6 +211,29 @@ export function Hero({
           </Entrance>
         )}
       </div>
+
+      {/* ---- Stat strip ---- */}
+      {stats.length > 0 && (
+        <Entrance delay={0.5}>
+          <div className="relative border-t border-white/10">
+            <dl className="container-page grid grid-cols-2 gap-y-8 py-10 sm:grid-cols-3 lg:grid-cols-5">
+              {stats.map((stat) => (
+                <div key={stat.id} className="text-center">
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd>
+                    <span className="block text-3xl font-black tracking-tight text-accent sm:text-4xl">
+                      {stat.value}
+                    </span>
+                    <span className="mt-1 block text-[11px] font-bold uppercase tracking-[0.18em] text-primary-foreground/50">
+                      {stat.label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </Entrance>
+      )}
     </section>
   );
 }

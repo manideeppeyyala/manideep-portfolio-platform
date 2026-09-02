@@ -9,45 +9,51 @@
    ============================================================ */
 
 @theme {
-  /* ---------- Brand: navy ---------- */
-  --color-navy-50: oklch(96% 0.015 258);
-  --color-navy-100: oklch(90% 0.03 258);
-  --color-navy-200: oklch(78% 0.06 258);
-  --color-navy-300: oklch(64% 0.1 258);
-  --color-navy-400: oklch(55% 0.18 256);
-  --color-navy-500: oklch(45% 0.15 258);
-  --color-navy-600: oklch(36% 0.13 258);
-  --color-navy-700: oklch(28% 0.12 260);
-  --color-navy-800: oklch(24% 0.11 260);
-  --color-navy-900: oklch(18% 0.07 260);
-  --color-navy-950: oklch(13% 0.06 260);
+  /* ----------------------------------------------------------------
+     Brand: deep teal (the dark surface)
 
-  /* ---------- Brand: gold ---------- */
-  --color-gold-100: oklch(96% 0.08 95);
-  --color-gold-200: oklch(92% 0.16 95);
-  --color-gold-300: oklch(89% 0.17 93);
-  --color-gold-400: oklch(86% 0.17 92);
-  --color-gold-500: oklch(80% 0.17 90);
-  --color-gold-600: oklch(70% 0.16 88);
+     Token names stay `navy-*` so every component keeps working; the
+     values are what define the identity. Changing the palette means
+     editing values here and nowhere else.
+     ---------------------------------------------------------------- */
+  --color-navy-50: oklch(96% 0.02 180);
+  --color-navy-100: oklch(90% 0.04 180);
+  --color-navy-200: oklch(78% 0.07 180);
+  --color-navy-300: oklch(64% 0.09 180);
+  --color-navy-400: oklch(56% 0.11 182);
+  --color-navy-500: oklch(44% 0.10 180);
+  --color-navy-600: oklch(35% 0.09 180);
+  --color-navy-700: oklch(27% 0.07 180);
+  --color-navy-800: oklch(22% 0.06 180);
+  --color-navy-900: oklch(17% 0.05 178);
+  --color-navy-950: oklch(12% 0.04 178);
+
+  /* ---------- Brand: coral (the accent) ---------- */
+  --color-gold-100: oklch(94% 0.05 40);
+  --color-gold-200: oklch(87% 0.10 38);
+  --color-gold-300: oklch(80% 0.15 36);
+  --color-gold-400: oklch(73% 0.18 33);
+  --color-gold-500: oklch(66% 0.19 31);
+  --color-gold-600: oklch(58% 0.18 29);
 
   /* ---------- Semantic (light surface) ---------- */
-  --color-background: oklch(99% 0.003 240);
-  --color-foreground: oklch(18% 0.06 260);
+  --color-background: oklch(99% 0.004 160);
+  --color-foreground: oklch(19% 0.04 180);
   --color-card: oklch(100% 0 0);
-  --color-card-foreground: oklch(18% 0.06 260);
-  --color-muted: oklch(96% 0.01 250);
-  --color-muted-foreground: oklch(50% 0.03 256);
-  --color-border: oklch(90% 0.02 250);
-  --color-input: oklch(92% 0.015 250);
+  --color-card-foreground: oklch(19% 0.04 180);
+  --color-muted: oklch(96% 0.012 170);
+  --color-muted-foreground: oklch(50% 0.025 180);
+  --color-border: oklch(90% 0.018 175);
+  --color-input: oklch(92% 0.015 175);
 
-  --color-primary: oklch(36% 0.13 258);
-  --color-primary-foreground: oklch(99% 0.005 240);
-  --color-primary-deep: oklch(24% 0.11 260);
-  --color-primary-glow: oklch(55% 0.18 256);
+  --color-primary: oklch(35% 0.09 180);
+  --color-primary-foreground: oklch(99% 0.005 170);
+  --color-primary-deep: oklch(22% 0.06 180);
+  --color-primary-glow: oklch(56% 0.11 182);
 
-  --color-accent: oklch(86% 0.17 92);
-  --color-accent-foreground: oklch(24% 0.11 260);
-  --color-accent-glow: oklch(92% 0.16 95);
+  --color-accent: oklch(73% 0.18 33);
+  --color-accent-foreground: oklch(20% 0.05 30);
+  --color-accent-glow: oklch(80% 0.15 36);
 
   --color-success: oklch(65% 0.17 150);
   --color-warning: oklch(75% 0.16 70);
@@ -77,36 +83,45 @@
 
 /* Non-color tokens Tailwind v4 doesn't namespace for us */
 :root {
-  --shadow-elegant: 0 25px 60px -25px oklch(24% 0.11 260 / 0.35);
-  --shadow-glow: 0 0 60px oklch(55% 0.18 256 / 0.4);
-  --shadow-gold: 0 10px 40px -10px oklch(86% 0.17 92 / 0.5);
-  --shadow-card: 0 1px 2px oklch(24% 0.11 260 / 0.04),
-    0 10px 30px -10px oklch(24% 0.11 260 / 0.12);
-  --shadow-lift: 0 20px 50px -20px oklch(24% 0.11 260 / 0.28);
+  --shadow-elegant: 0 25px 60px -25px oklch(22% 0.06 180 / 0.38);
+  --shadow-glow: 0 0 60px oklch(56% 0.11 182 / 0.4);
+  --shadow-gold: 0 10px 40px -10px oklch(73% 0.18 33 / 0.5);
+  --shadow-card: 0 1px 2px oklch(22% 0.06 180 / 0.05),
+    0 10px 30px -10px oklch(22% 0.06 180 / 0.12);
+  --shadow-lift: 0 20px 50px -20px oklch(22% 0.06 180 / 0.28);
 
   --glass-bg: oklch(100% 0 0 / 0.7);
   --glass-border: oklch(100% 0 0 / 0.4);
-  --glass-dark-bg: oklch(18% 0.07 260 / 0.5);
+  --glass-dark-bg: oklch(17% 0.05 178 / 0.5);
   --glass-dark-border: oklch(100% 0 0 / 0.12);
 
+  /* Deep surface: teal base, coral warmth bleeding in from one corner. */
   --gradient-hero: radial-gradient(
-      1200px 600px at 80% -10%,
-      oklch(55% 0.18 256 / 0.35),
+      1200px 600px at 82% -12%,
+      oklch(56% 0.11 182 / 0.34),
       transparent 60%
     ),
-    radial-gradient(900px 500px at 0% 110%, oklch(86% 0.17 92 / 0.18), transparent 60%),
+    radial-gradient(900px 520px at 0% 108%, oklch(73% 0.18 33 / 0.20), transparent 62%),
     linear-gradient(
-      135deg,
-      oklch(18% 0.07 260) 0%,
-      oklch(24% 0.11 260) 50%,
-      oklch(32% 0.13 258) 100%
+      140deg,
+      oklch(12% 0.04 178) 0%,
+      oklch(18% 0.055 179) 52%,
+      oklch(26% 0.075 181) 100%
     );
   --gradient-gold: linear-gradient(
     135deg,
-    oklch(86% 0.17 92),
-    oklch(92% 0.16 95)
+    oklch(73% 0.18 33),
+    oklch(83% 0.15 45)
   );
-  --gradient-text: linear-gradient(135deg, oklch(100% 0 0), oklch(86% 0.17 92));
+  --gradient-text: linear-gradient(135deg, oklch(100% 0 0), oklch(80% 0.15 36));
+
+  /* The two section grounds the whole page alternates between. */
+  --surface-deep: var(--gradient-hero);
+  --surface-soft: linear-gradient(
+    180deg,
+    oklch(99% 0.004 160) 0%,
+    oklch(97% 0.012 170) 100%
+  );
 
   --nav-h: 4.25rem;
 }
@@ -320,4 +335,53 @@ body {
     background: #fff;
     color: #000;
   }
+}
+
+
+/* ============================================================
+   SECTION GROUNDS
+   The page alternates deep → soft → deep. These two utilities are
+   the only place that alternation is defined.
+   ============================================================ */
+
+@utility bg-deep {
+  background: var(--surface-deep);
+  color: var(--color-primary-foreground);
+}
+
+@utility bg-soft {
+  background: var(--surface-soft);
+  color: var(--color-foreground);
+}
+
+/** Faint engineering grid, masked to fade at the edges. */
+@utility grid-bg {
+  position: relative;
+}
+
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: linear-gradient(to right, white 1px, transparent 1px),
+    linear-gradient(to bottom, white 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 40%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 40%, black, transparent);
+}
+
+/* Frosted card on dark grounds. */
+@utility glass-dark {
+  background: var(--glass-dark-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-dark-border);
+}
+
+/* Frosted card on light grounds. */
+@utility glass-soft {
+  background: oklch(100% 0 0 / 0.78);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--color-border);
 }

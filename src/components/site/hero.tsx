@@ -85,14 +85,12 @@ export function Hero({
       id="top"
       className="relative isolate overflow-hidden bg-gradient-hero text-primary-foreground"
     >
-      {/* Constellation field */}
+      {/*
+        Constellation field. Rendered at full opacity: the canvas already
+        tunes alpha per element (ambient links faint, cursor links bright),
+        so dimming the whole layer only muted the cursor interaction.
+      */}
       {hero.showParticles && (
-        {/*
-          Full opacity: the canvas already tunes its own alpha per element
-          (ambient links are faint, cursor links are bright). Dimming the
-          whole layer here muted the cursor interaction that's meant to be
-          the noticeable part.
-        */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <Particles />
         </div>

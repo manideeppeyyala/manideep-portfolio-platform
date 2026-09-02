@@ -21,6 +21,7 @@ import { SkillsSection } from "@/components/site/skills";
 import { TimelineSection } from "@/components/site/timeline";
 import { ProjectsSection } from "@/components/site/projects";
 import { CertificationsSection, TestimonialsSection } from "@/components/site/credentials";
+import { GallerySection } from "@/components/site/gallery";
 import { ContactSection } from "@/components/site/contact";
 import { SiteFooter } from "@/components/site/footer";
 import { MaintenanceScreen } from "@/components/site/maintenance";
@@ -66,6 +67,7 @@ export default async function HomePage() {
     experience: (
       <TimelineSection experience={content.experience} education={content.education} />
     ),
+    gallery: <GallerySection items={content.gallery} />,
     testimonials: <TestimonialsSection testimonials={content.testimonials} />,
     contact: (
       <ContactSection contact={content.contact} settings={settings} socials={socials} />

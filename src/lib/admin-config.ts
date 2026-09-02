@@ -448,6 +448,39 @@ export const MODULES: ModuleConfig[] = [
 
   /* ---------------------------------------------------------------- */
   {
+    key: "gallery",
+    slug: "gallery",
+    label: "Gallery",
+    description: "Photos and videos of milestones, conferences and achievements.",
+    icon: "Images",
+    kind: "collection",
+    group: "content",
+    titleField: "title",
+    subtitleField: "category",
+    fields: [
+      { key: "title", label: "Title", type: "text", wide: true },
+      { key: "image", label: "Image", type: "image", wide: true, help: "Also used as the poster frame for a video." },
+      { key: "video", label: "Video URL", type: "url", wide: true, help: "Optional. An mp4/webm URL turns this into a video tile." },
+      { key: "caption", label: "Caption", type: "textarea", wide: true },
+      { key: "category", label: "Category", type: "text", placeholder: "Milestone" },
+      { key: "date", label: "Date", type: "date", help: "Format: YYYY-MM" },
+      { key: "featured", label: "Featured (large tile)", type: "boolean" },
+      { key: "enabled", label: "Visible on site", type: "boolean" },
+    ],
+    blank: {
+      title: "",
+      caption: "",
+      image: "",
+      video: "",
+      category: "",
+      date: "",
+      featured: false,
+      enabled: true,
+    },
+  },
+
+  /* ---------------------------------------------------------------- */
+  {
     key: "resume",
     slug: "resume",
     label: "Résumé",

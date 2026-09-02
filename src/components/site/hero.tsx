@@ -102,9 +102,38 @@ export function Hero({
           )}
 
           <Entrance delay={0.14}>
-            <h1 className="mt-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="relative mt-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               {hero.name}{" "}
               {hero.nameAccent && <span className="text-gradient-gold">{hero.nameAccent}</span>}
+
+              {/* Decorative glints around the headline */}
+              <span
+                aria-hidden
+                className="sparkle -right-2 -top-3"
+                style={{ "--sparkle-size": "22px", "--twinkle-duration": "3.6s" } as React.CSSProperties}
+              />
+              <span
+                aria-hidden
+                className="sparkle right-10 top-14"
+                style={
+                  {
+                    "--sparkle-size": "13px",
+                    "--twinkle-delay": "1.1s",
+                    "--sparkle-color": "var(--color-glint-cyan)",
+                  } as React.CSSProperties
+                }
+              />
+              <span
+                aria-hidden
+                className="sparkle -left-5 top-8"
+                style={
+                  {
+                    "--sparkle-size": "11px",
+                    "--twinkle-delay": "2s",
+                    "--sparkle-color": "var(--color-glint-amber)",
+                  } as React.CSSProperties
+                }
+              />
             </h1>
           </Entrance>
 
@@ -190,7 +219,7 @@ export function Hero({
             <div className="group relative">
               <div
                 aria-hidden
-                className="absolute -inset-5 rounded-[2.5rem] bg-gradient-gold opacity-15 blur-3xl transition-opacity duration-500 group-hover:opacity-25"
+                className="animate-halo absolute -inset-5 rounded-[2.5rem] bg-gradient-gold blur-3xl"
               />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/15 shadow-elegant">
                 <Image
@@ -217,11 +246,11 @@ export function Hero({
         <Entrance delay={0.5}>
           <div className="relative border-t border-white/10">
             <dl className="container-page grid grid-cols-2 gap-y-8 py-10 sm:grid-cols-3 lg:grid-cols-5">
-              {stats.map((stat) => (
+              {stats.map((stat, index) => (
                 <div key={stat.id} className="text-center">
                   <dt className="sr-only">{stat.label}</dt>
                   <dd>
-                    <span className="block text-3xl font-black tracking-tight text-accent sm:text-4xl">
+                    <span className="block text-3xl font-black tracking-tight text-accent sm:text-4xl [animation-delay:var(--d)] animate-blink" style={{ "--d": `${index * 0.35}s` } as React.CSSProperties}>
                       {stat.value}
                     </span>
                     <span className="mt-1 block text-[11px] font-bold uppercase tracking-[0.18em] text-primary-foreground/50">

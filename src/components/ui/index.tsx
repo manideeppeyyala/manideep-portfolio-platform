@@ -205,7 +205,7 @@ export function SectionHeader({
       {eyebrow && (
         <span
           className={cn(
-            "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em]",
+            "relative inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em]",
             tone === "dark" ? "text-accent" : "text-primary-glow"
           )}
         >
@@ -214,6 +214,16 @@ export function SectionHeader({
             className={cn("h-px w-10", tone === "dark" ? "bg-accent" : "bg-primary-glow")}
           />
           {eyebrow}
+          <span
+            aria-hidden
+            className="sparkle -right-4 -top-1"
+            style={
+              {
+                "--sparkle-size": "10px",
+                "--twinkle-duration": "4s",
+              } as React.CSSProperties
+            }
+          />
         </span>
       )}
 
@@ -221,7 +231,7 @@ export function SectionHeader({
         className={cn(
           "mt-4 text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl",
           "leading-[1.05]",
-          tone === "dark" ? "text-primary-foreground" : "text-foreground"
+          tone === "dark" ? "glint-text text-primary-foreground" : "text-foreground"
         )}
       >
         {title}

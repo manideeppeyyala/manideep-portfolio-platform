@@ -10,50 +10,55 @@
 
 @theme {
   /* ----------------------------------------------------------------
-     Brand: deep teal (the dark surface)
+     Brand: ink (the dark surface)
 
      Token names stay `navy-*` so every component keeps working; the
      values are what define the identity. Changing the palette means
      editing values here and nowhere else.
      ---------------------------------------------------------------- */
-  --color-navy-50: oklch(96% 0.02 180);
-  --color-navy-100: oklch(90% 0.04 180);
-  --color-navy-200: oklch(78% 0.07 180);
-  --color-navy-300: oklch(64% 0.09 180);
-  --color-navy-400: oklch(56% 0.11 182);
-  --color-navy-500: oklch(44% 0.10 180);
-  --color-navy-600: oklch(35% 0.09 180);
-  --color-navy-700: oklch(27% 0.07 180);
-  --color-navy-800: oklch(22% 0.06 180);
-  --color-navy-900: oklch(17% 0.05 178);
-  --color-navy-950: oklch(12% 0.04 178);
+  --color-navy-50: oklch(96% 0.012 280);
+  --color-navy-100: oklch(90% 0.025 280);
+  --color-navy-200: oklch(78% 0.05 280);
+  --color-navy-300: oklch(64% 0.09 280);
+  --color-navy-400: oklch(56% 0.14 280);
+  --color-navy-500: oklch(45% 0.15 279);
+  --color-navy-600: oklch(36% 0.13 278);
+  --color-navy-700: oklch(27% 0.09 278);
+  --color-navy-800: oklch(21% 0.06 278);
+  --color-navy-900: oklch(16% 0.04 277);
+  --color-navy-950: oklch(11% 0.028 276);
 
-  /* ---------- Brand: coral (the accent) ---------- */
-  --color-gold-100: oklch(94% 0.05 40);
-  --color-gold-200: oklch(87% 0.10 38);
-  --color-gold-300: oklch(80% 0.15 36);
-  --color-gold-400: oklch(73% 0.18 33);
-  --color-gold-500: oklch(66% 0.19 31);
-  --color-gold-600: oklch(58% 0.18 29);
+  /* ---------- Brand: electric violet (the accent) ---------- */
+  --color-gold-100: oklch(95% 0.04 295);
+  --color-gold-200: oklch(88% 0.09 293);
+  --color-gold-300: oklch(80% 0.15 292);
+  --color-gold-400: oklch(72% 0.20 291);
+  --color-gold-500: oklch(64% 0.22 290);
+  --color-gold-600: oklch(55% 0.21 289);
+
+  /* ---------- Glints: used only by the sparkle animations ---------- */
+  --color-glint-cyan: oklch(84% 0.13 205);
+  --color-glint-amber: oklch(86% 0.14 82);
+  --color-glint-violet: oklch(80% 0.16 295);
 
   /* ---------- Semantic (light surface) ---------- */
-  --color-background: oklch(99% 0.004 160);
-  --color-foreground: oklch(19% 0.04 180);
+  --color-background: oklch(99% 0.003 285);
+  --color-foreground: oklch(18% 0.03 280);
   --color-card: oklch(100% 0 0);
-  --color-card-foreground: oklch(19% 0.04 180);
-  --color-muted: oklch(96% 0.012 170);
-  --color-muted-foreground: oklch(50% 0.025 180);
-  --color-border: oklch(90% 0.018 175);
-  --color-input: oklch(92% 0.015 175);
+  --color-card-foreground: oklch(18% 0.03 280);
+  --color-muted: oklch(96% 0.008 285);
+  --color-muted-foreground: oklch(50% 0.025 282);
+  --color-border: oklch(91% 0.012 285);
+  --color-input: oklch(93% 0.01 285);
 
-  --color-primary: oklch(35% 0.09 180);
-  --color-primary-foreground: oklch(99% 0.005 170);
-  --color-primary-deep: oklch(22% 0.06 180);
-  --color-primary-glow: oklch(56% 0.11 182);
+  --color-primary: oklch(45% 0.16 279);
+  --color-primary-foreground: oklch(99% 0.004 285);
+  --color-primary-deep: oklch(30% 0.12 278);
+  --color-primary-glow: oklch(62% 0.20 283);
 
-  --color-accent: oklch(73% 0.18 33);
-  --color-accent-foreground: oklch(20% 0.05 30);
-  --color-accent-glow: oklch(80% 0.15 36);
+  --color-accent: oklch(72% 0.20 291);
+  --color-accent-foreground: oklch(15% 0.05 285);
+  --color-accent-glow: oklch(82% 0.15 293);
 
   --color-success: oklch(65% 0.17 150);
   --color-warning: oklch(75% 0.16 70);
@@ -83,44 +88,44 @@
 
 /* Non-color tokens Tailwind v4 doesn't namespace for us */
 :root {
-  --shadow-elegant: 0 25px 60px -25px oklch(22% 0.06 180 / 0.38);
-  --shadow-glow: 0 0 60px oklch(56% 0.11 182 / 0.4);
-  --shadow-gold: 0 10px 40px -10px oklch(73% 0.18 33 / 0.5);
-  --shadow-card: 0 1px 2px oklch(22% 0.06 180 / 0.05),
-    0 10px 30px -10px oklch(22% 0.06 180 / 0.12);
-  --shadow-lift: 0 20px 50px -20px oklch(22% 0.06 180 / 0.28);
+  --shadow-elegant: 0 25px 60px -25px oklch(16% 0.04 277 / 0.42);
+  --shadow-glow: 0 0 60px oklch(62% 0.20 283 / 0.4);
+  --shadow-gold: 0 10px 40px -10px oklch(72% 0.20 291 / 0.5);
+  --shadow-card: 0 1px 2px oklch(16% 0.04 277 / 0.05),
+    0 10px 30px -10px oklch(16% 0.04 277 / 0.12);
+  --shadow-lift: 0 20px 50px -20px oklch(16% 0.04 277 / 0.3);
 
-  --glass-bg: oklch(100% 0 0 / 0.7);
+  --glass-bg: oklch(100% 0 0 / 0.72);
   --glass-border: oklch(100% 0 0 / 0.4);
-  --glass-dark-bg: oklch(17% 0.05 178 / 0.5);
+  --glass-dark-bg: oklch(16% 0.04 277 / 0.5);
   --glass-dark-border: oklch(100% 0 0 / 0.12);
 
-  /* Deep surface: teal base, coral warmth bleeding in from one corner. */
+  /* Deep surface: ink base, violet bloom top-right, cyan whisper bottom-left. */
   --gradient-hero: radial-gradient(
-      1200px 600px at 82% -12%,
-      oklch(56% 0.11 182 / 0.34),
-      transparent 60%
+      1200px 620px at 82% -12%,
+      oklch(62% 0.20 283 / 0.32),
+      transparent 62%
     ),
-    radial-gradient(900px 520px at 0% 108%, oklch(73% 0.18 33 / 0.20), transparent 62%),
+    radial-gradient(900px 520px at 0% 108%, oklch(84% 0.13 205 / 0.14), transparent 64%),
     linear-gradient(
       140deg,
-      oklch(12% 0.04 178) 0%,
-      oklch(18% 0.055 179) 52%,
-      oklch(26% 0.075 181) 100%
+      oklch(11% 0.028 276) 0%,
+      oklch(16% 0.042 278) 54%,
+      oklch(23% 0.075 281) 100%
     );
   --gradient-gold: linear-gradient(
     135deg,
-    oklch(73% 0.18 33),
-    oklch(83% 0.15 45)
+    oklch(72% 0.20 291),
+    oklch(82% 0.15 293)
   );
-  --gradient-text: linear-gradient(135deg, oklch(100% 0 0), oklch(80% 0.15 36));
+  --gradient-text: linear-gradient(135deg, oklch(100% 0 0), oklch(80% 0.16 293));
 
   /* The two section grounds the whole page alternates between. */
   --surface-deep: var(--gradient-hero);
   --surface-soft: linear-gradient(
     180deg,
-    oklch(99% 0.004 160) 0%,
-    oklch(97% 0.012 170) 100%
+    oklch(99% 0.003 285) 0%,
+    oklch(97% 0.009 288) 100%
   );
 
   --nav-h: 4.25rem;
@@ -384,4 +389,162 @@ body {
   background: oklch(100% 0 0 / 0.78);
   backdrop-filter: blur(18px);
   border: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   GLINT / SPARKLE LAYER
+
+   Decorative shine used sparingly on headings, badges and
+   gallery tiles. Every effect here is purely presentational and
+   is switched off entirely under prefers-reduced-motion by the
+   global block above.
+   ============================================================ */
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1) rotate(90deg);
+  }
+  70% {
+    opacity: 0.35;
+    transform: scale(0.75) rotate(140deg);
+  }
+}
+
+@keyframes glint-sweep {
+  0% {
+    background-position: -180% 0;
+  }
+  60%,
+  100% {
+    background-position: 180% 0;
+  }
+}
+
+@keyframes soft-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes halo-breathe {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.34;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes border-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(72% 0.2 291 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 22px 2px oklch(72% 0.2 291 / 0.22);
+  }
+}
+
+/**
+ * A single four-point sparkle. Position it with utilities and stagger
+ * siblings with `--twinkle-delay`.
+ */
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  width: var(--sparkle-size, 14px);
+  height: var(--sparkle-size, 14px);
+  background: var(--sparkle-color, var(--color-glint-violet));
+  /* Four-point star, drawn with a clip-path rather than an image. */
+  clip-path: polygon(
+    50% 0%,
+    58% 42%,
+    100% 50%,
+    58% 58%,
+    50% 100%,
+    42% 58%,
+    0% 50%,
+    42% 42%
+  );
+  animation: twinkle var(--twinkle-duration, 3.2s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+/** Slow shine sweeping across text. Pair with a gradient-clipped heading. */
+.glint-text {
+  background-image: linear-gradient(
+    100deg,
+    transparent 20%,
+    oklch(100% 0 0 / 0.85) 45%,
+    transparent 70%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glint-sweep 6s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: soft-blink 2.2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-y 5.5s ease-in-out infinite;
+}
+
+.animate-halo {
+  animation: halo-breathe 4.5s ease-in-out infinite;
+}
+
+.animate-border-glow {
+  animation: border-glow 3.4s ease-in-out infinite;
+}
+
+/** Shine that sweeps across a card on hover. */
+.shine-on-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-on-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    oklch(100% 0 0 / 0.13) 48%,
+    transparent 62%
+  );
+  background-size: 220% 100%;
+  background-position: -180% 0;
+  transition: background-position 0.9s var(--ease-smooth);
+}
+
+.shine-on-hover:hover::after {
+  background-position: 180% 0;
 }

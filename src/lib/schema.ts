@@ -298,6 +298,24 @@ export const testimonialSchema = z.object({
 export type Testimonial = z.infer<typeof testimonialSchema>;
 
 /* ------------------------------------------------------------------ */
+/* Gallery                                                             */
+/* ------------------------------------------------------------------ */
+
+export const galleryItemSchema = z.object({
+  ...record,
+  title: z.string().max(160).default(""),
+  caption: z.string().max(400).default(""),
+  /** Image URL, or a poster frame when `video` is set. */
+  image: linkish.default(""),
+  /** Optional video (mp4/webm or an embed URL). Falls back to the image. */
+  video: linkish.default(""),
+  category: z.string().max(60).default(""),
+  date: isoDateish.default(""),
+  featured: z.boolean().default(false),
+});
+export type GalleryItem = z.infer<typeof galleryItemSchema>;
+
+/* ------------------------------------------------------------------ */
 /* Social links                                                        */
 /* ------------------------------------------------------------------ */
 
@@ -423,6 +441,7 @@ export const SECTION_KEYS = [
   "certifications",
   "education",
   "testimonials",
+  "gallery",
   "contact",
 ] as const;
 export type SectionKey = (typeof SECTION_KEYS)[number];
@@ -466,6 +485,7 @@ export const contentSchema = z.object({
   projects: z.array(projectSchema),
   testimonials: z.array(testimonialSchema),
   socialLinks: z.array(socialLinkSchema),
+  gallery: z.array(galleryItemSchema),
   resume: resumeSchema,
   contact: contactSchema,
   seo: seoSchema,

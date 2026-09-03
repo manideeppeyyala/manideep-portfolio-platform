@@ -3,7 +3,16 @@
 Follow this top to bottom. It takes about 10 minutes. Nothing here costs
 money or asks for a card.
 
-**Repository:** https://github.com/manideeppeyyala/manideep-portfolio-platform
+**Status:** ✅ Deployed and verified.
+
+| | |
+|---|---|
+| **Live site** | https://manideep-portfolio-platform.vercel.app |
+| **Admin portal** | https://manideep-portfolio-platform.vercel.app/admin |
+| **Repository** | https://github.com/manideeppeyyala/manideep-portfolio-platform |
+
+Deployed on 3 September 2026. Public site, admin auth and the
+admin → GitHub save loop were all verified against production.
 
 ---
 
@@ -43,7 +52,7 @@ Wait for `✓ Ready`.
 
 ### STEP 4 — Sign in to the admin
 
-Password: `Quartz-Falcon-7185!`
+Password: whatever you chose when running `npm run hash-password`.
 
 ### STEP 5 — Stop the server when done
 
@@ -129,13 +138,18 @@ Add each one as a separate Name/Value pair. **No quotes around values.**
 
 | Name | Value |
 |---|---|
-| `ADMIN_PASSWORD_HASH` | `scrypt:16384:8:1:9d7f43b2ecf34715fb42f7dccf75afcf:072000c6a0e25081616aac491556685fafa1a714d0875baa4a9fb917bff94e7621da7b46135e7c240ac9d5769a0dd3e02f92c116e4910645e949f62348f615b0` |
-| `AUTH_SECRET` | `Pv8LWLwFC0ZbXuViXPq1hitBFeg2n7kn6tp9VmQP6Yg=` |
+| `ADMIN_PASSWORD_HASH` | the `scrypt:...` line from `npm run hash-password` |
+| `AUTH_SECRET` | the `AUTH_SECRET=` line from the same command |
 | `GITHUB_OWNER` | `manideeppeyyala` |
 | `GITHUB_REPO` | `manideep-portfolio-platform` |
 | `GITHUB_BRANCH` | `main` |
 
 > `ADMIN_PASSWORD_HASH` is one long line — make sure you copy all of it.
+>
+> **Secrets are deliberately not written down in this repository.** It's
+> public, so the hash and secret live only in Vercel's environment
+> variables, and the password only in your head / password manager.
+> Regenerate both any time with `npm run hash-password`.
 
 ### STEP 18 — Add the sixth variable (your token)
 
@@ -198,7 +212,7 @@ asking, stop and re-check `AUTH_SECRET`.
 
 ### STEP 25 — Admin sign-in
 
-Sign in with `Quartz-Falcon-7185!`
+Sign in with the password you chose when generating the hash.
 
 ### STEP 26 — The important test: does saving work?
 

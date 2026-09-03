@@ -7,6 +7,9 @@ from a password-protected admin panel — no code changes, no redeploys.
 Built as a **completely independent project**. It shares no code, no
 repository, no database and no deployment with any previous portfolio.
 
+🔗 **Live site:** https://manideep-portfolio-platform.vercel.app
+🔒 **Admin panel:** https://manideep-portfolio-platform.vercel.app/admin
+
 - **Public site** — Next.js 16 App Router, server-rendered, statically
   optimised, fully responsive, accessible, SEO-complete
 - **Admin CMS** (`/admin`) — 20 screens covering every piece of content,
@@ -729,15 +732,16 @@ Wait 15 minutes, or redeploy — the counter is in memory.
 
 | Resource | URL |
 |---|---|
-| GitHub repository | `https://github.com/<owner>/<repo>` |
-| Production website | `<set after deployment>` |
-| Admin portal | `<production-url>/admin` |
+| **Production website** | https://manideep-portfolio-platform.vercel.app |
+| **Admin portal** | https://manideep-portfolio-platform.vercel.app/admin |
+| GitHub repository | https://github.com/manideeppeyyala/manideep-portfolio-platform |
 | Vercel dashboard | https://vercel.com/dashboard |
 | GitHub token settings | https://github.com/settings/tokens?type=beta |
 | Next.js docs | https://nextjs.org/docs |
 | Tailwind v4 docs | https://tailwindcss.com/docs |
 
-Fill in the placeholders once deployed.
+The admin password is **not** recorded here on purpose — it lives only in
+your Vercel environment variables (as a scrypt hash) and in your head.
 
 ---
 

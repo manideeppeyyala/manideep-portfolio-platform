@@ -77,15 +77,15 @@ export function GallerySection({ items }: { items: GalleryItem[] }) {
           <Reveal>
             <SectionHeader
               eyebrow="Gallery"
-              title="Moments & milestones."
-              description="Graduation, conferences, certifications and life at work."
+              title="Career milestones."
+              description="Graduation, conferences, onboarding and moments from working life."
             />
           </Reveal>
           <EmptyState
             className="mt-12"
             icon={<ImageOff size={26} aria-hidden />}
             title="No photos yet"
-            description="Add images and videos from Admin → Gallery."
+            description="Add career photos and videos from Admin → Gallery."
           />
         </div>
       </section>
@@ -100,17 +100,28 @@ export function GallerySection({ items }: { items: GalleryItem[] }) {
         <Reveal>
           <SectionHeader
             eyebrow="Gallery"
-            title="Moments & milestones."
-            description="Graduation, conferences, certifications and life at work — the moments behind the résumé."
+            title="Career milestones."
+            description="Graduation, conferences, onboarding and moments from working life — the milestones behind the résumé."
           />
         </Reveal>
 
-        <div className="mt-14 grid auto-rows-[minmax(0,1fr)] grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        <div
+          className={cn(
+            "mt-14 grid auto-rows-[minmax(0,1fr)] gap-4",
+            // Few items would look stranded in a four-up grid, so the
+            // column count follows the content rather than the breakpoint.
+            shown.length <= 2
+              ? "mx-auto max-w-3xl grid-cols-1 sm:grid-cols-2"
+              : shown.length <= 3
+                ? "grid-cols-2 md:grid-cols-3"
+                : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          )}
+        >
           {shown.map((item, index) => (
             <Reveal
               key={item.id}
               delay={Math.min(index * 0.05, 0.35)}
-              className={cn(item.featured && "sm:col-span-2 sm:row-span-2")}
+              className={cn(item.featured && shown.length > 3 && "sm:col-span-2 sm:row-span-2")}
             >
               <button
                 ref={(el) => {

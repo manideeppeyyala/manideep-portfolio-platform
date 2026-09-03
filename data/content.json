@@ -1,0 +1,1129 @@
+{
+  "settings": {
+    "siteTitle": "Peyyala Manideep — SmartComm Developer & AI/Data Engineer",
+    "siteDescription": "SmartComm Developer & AI/Data Engineer at Deloitte. Python, SQL-driven backend logic, document-processing pipelines and automation for enterprise systems.",
+    "shortName": "Peyyala Manideep",
+    "logoText": "PM",
+    "logoImage": "",
+    "favicon": "",
+    "profileImage": "/profile.jpg",
+    "email": "manideepyadav380@gmail.com",
+    "phone": "+91 70757 43204",
+    "whatsapp": "+917075743204",
+    "location": "Nellore, India",
+    "availabilityStatus": "Open to opportunities",
+    "availabilityOpen": true,
+    "responseTime": "Usually replies within 24 hours",
+    "footerText": "Building reliable backend systems at the intersection of Python, SmartComm and data.",
+    "copyrightText": "Peyyala Manideep. All rights reserved.",
+    "maintenanceMode": false,
+    "maintenanceMessage": "This site is briefly down for updates. Please check back shortly."
+  },
+  "navigation": [
+    {
+      "id": "nav_about",
+      "order": 0,
+      "enabled": true,
+      "label": "About",
+      "href": "#about",
+      "external": false
+    },
+    {
+      "id": "nav_expertise",
+      "order": 1,
+      "enabled": true,
+      "label": "Expertise",
+      "href": "#expertise",
+      "external": false
+    },
+    {
+      "id": "nav_work",
+      "order": 2,
+      "enabled": true,
+      "label": "Work",
+      "href": "#projects",
+      "external": false
+    },
+    {
+      "id": "nav_cert",
+      "order": 3,
+      "enabled": true,
+      "label": "Certifications",
+      "href": "#certifications",
+      "external": false
+    },
+    {
+      "id": "nav_skills",
+      "order": 4,
+      "enabled": true,
+      "label": "Skills",
+      "href": "#skills",
+      "external": false
+    },
+    {
+      "id": "nav_exp",
+      "order": 5,
+      "enabled": true,
+      "label": "Experience",
+      "href": "#experience",
+      "external": false
+    },
+    {
+      "id": "nav_gallery",
+      "order": 6,
+      "enabled": true,
+      "label": "Gallery",
+      "href": "#gallery",
+      "external": false
+    },
+    {
+      "id": "nav_contact",
+      "order": 7,
+      "enabled": true,
+      "label": "Contact",
+      "href": "#contact",
+      "external": false
+    }
+  ],
+  "sections": [
+    {
+      "key": "hero",
+      "label": "Hero",
+      "enabled": true,
+      "order": 0
+    },
+    {
+      "key": "about",
+      "label": "About",
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "key": "services",
+      "label": "Expertise",
+      "enabled": true,
+      "order": 2
+    },
+    {
+      "key": "projects",
+      "label": "Work & Research",
+      "enabled": true,
+      "order": 3
+    },
+    {
+      "key": "certifications",
+      "label": "Certifications",
+      "enabled": true,
+      "order": 4
+    },
+    {
+      "key": "skills",
+      "label": "Skills",
+      "enabled": true,
+      "order": 5
+    },
+    {
+      "key": "experience",
+      "label": "Experience & Education",
+      "enabled": true,
+      "order": 6
+    },
+    {
+      "key": "gallery",
+      "label": "Gallery",
+      "enabled": true,
+      "order": 7
+    },
+    {
+      "key": "testimonials",
+      "label": "Testimonials",
+      "enabled": false,
+      "order": 8
+    },
+    {
+      "key": "contact",
+      "label": "Contact",
+      "enabled": true,
+      "order": 9
+    },
+    {
+      "key": "education",
+      "label": "Education (in timeline)",
+      "enabled": false,
+      "order": 10
+    }
+  ],
+  "hero": {
+    "eyebrow": "SmartComm Developer · AI & Data Engineer",
+    "name": "Peyyala",
+    "nameAccent": "Manideep",
+    "titles": [
+      "SmartComm Developer",
+      "AI & Data Engineer",
+      "Analyst, Consulting Services @ Deloitte",
+      "Python Backend Developer"
+    ],
+    "intro": "Detail-oriented SmartComm Developer & AI/Data Engineer specializing in Python — building document-processing systems, SQL-driven backend logic and automation that hold up in production.",
+    "primaryCtaLabel": "View Projects",
+    "primaryCtaHref": "#projects",
+    "secondaryCtaLabel": "Experience",
+    "secondaryCtaHref": "#experience",
+    "tertiaryCtaLabel": "Contact",
+    "tertiaryCtaHref": "#contact",
+    "image": "/profile.jpg",
+    "imageAlt": "Portrait of Peyyala Manideep",
+    "showSocials": true,
+    "showParticles": true
+  },
+  "about": {
+    "eyebrow": "About",
+    "heading": "Backend engineering, with the details right.",
+    "lead": "A SmartComm Developer & AI/Data Engineer at Deloitte, building document-processing systems and backend data workflows that enterprise clients depend on every day.",
+    "paragraphs": [
+      "I'm Peyyala Manideep — a SmartComm Developer and AI/Data Engineer working as an Analyst in Consulting Services at Deloitte, Hyderabad. My day-to-day is backend document-processing logic and SQL-driven data workflows for high-volume enterprise systems, sitting right where automation, integration and production support meet.",
+      "Most of what I build is invisible when it works. A document pipeline that validates and structures thousands of records without a human touching them. A SQL query rewritten with the right window function so a report that took minutes returns in seconds. Reusable Python modules that quietly remove the manual step someone used to do every morning. I care about that kind of engineering — modular, maintainable, and boring in production.",
+      "I came to this through a B.Tech in Computer Science & Engineering specialising in AI and Machine Learning at Kalasalingam Academy of Research and Education, graduating in 2025 with a CGPA of 8.84. Along the way I published research on satellite-image-based crop recommendation using CNN and EfficientNet, presented at IEEE ICIRCA 2025 — my first real taste of taking an idea all the way from a dataset to a peer-reviewed room.",
+      "Since then I've kept deliberately widening the stack rather than deepening one narrow corner: Databricks certification for data engineering, Anthropic's AI Fluency and Claude Code training for working effectively alongside AI tools, and Power BI for the analytics end. The thread connecting them is the same — understanding data well enough to move it, shape it and explain it.",
+      "Outside engineering I create tech and career content as Vlogging With Mani, which keeps me honest: if I can't explain a concept clearly to someone starting out, I probably don't understand it as well as I think I do."
+    ],
+    "image": "/profile.jpg",
+    "highlights": [
+      "Analyst @ Deloitte",
+      "IEEE Published",
+      "Databricks Certified",
+      "Anthropic AI Fluency",
+      "B.Tech CGPA 8.84",
+      "Content Creator"
+    ],
+    "ctaLabel": "Get in touch",
+    "ctaHref": "#contact",
+    "stats": [
+      {
+        "id": "stat_cgpa",
+        "order": 0,
+        "enabled": true,
+        "value": "8.84",
+        "label": "B.Tech CGPA"
+      },
+      {
+        "id": "stat_certs",
+        "order": 1,
+        "enabled": true,
+        "value": "8+",
+        "label": "Certifications"
+      },
+      {
+        "id": "stat_pub",
+        "order": 2,
+        "enabled": true,
+        "value": "1",
+        "label": "IEEE Publication"
+      },
+      {
+        "id": "stat_stack",
+        "order": 3,
+        "enabled": true,
+        "value": "20+",
+        "label": "Technologies"
+      },
+      {
+        "id": "stat_years",
+        "order": 4,
+        "enabled": true,
+        "value": "1+",
+        "label": "Years at Deloitte"
+      }
+    ]
+  },
+  "skillCategories": [
+    {
+      "id": "sc_lang",
+      "order": 0,
+      "enabled": true,
+      "name": "Programming Languages",
+      "icon": "Code2",
+      "description": ""
+    },
+    {
+      "id": "sc_backend",
+      "order": 1,
+      "enabled": true,
+      "name": "Backend & Integration",
+      "icon": "Server",
+      "description": ""
+    },
+    {
+      "id": "sc_data",
+      "order": 2,
+      "enabled": true,
+      "name": "Databases & Data Engineering",
+      "icon": "Database",
+      "description": ""
+    },
+    {
+      "id": "sc_smartcomm",
+      "order": 3,
+      "enabled": true,
+      "name": "SmartComm & Enterprise Content",
+      "icon": "FileText",
+      "description": ""
+    },
+    {
+      "id": "sc_ai",
+      "order": 4,
+      "enabled": true,
+      "name": "AI & Machine Learning",
+      "icon": "Sparkles",
+      "description": ""
+    },
+    {
+      "id": "sc_tools",
+      "order": 5,
+      "enabled": true,
+      "name": "Platforms & Tools",
+      "icon": "Wrench",
+      "description": ""
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk_py",
+      "order": 0,
+      "enabled": true,
+      "name": "Python",
+      "category": "Programming Languages",
+      "level": 90,
+      "years": 3,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_sql",
+      "order": 1,
+      "enabled": true,
+      "name": "SQL (MySQL)",
+      "category": "Databases & Data Engineering",
+      "level": 88,
+      "years": 3,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_smartcomm",
+      "order": 2,
+      "enabled": true,
+      "name": "SmartComm",
+      "category": "SmartComm & Enterprise Content",
+      "level": 85,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_java",
+      "order": 3,
+      "enabled": true,
+      "name": "Java",
+      "category": "Programming Languages",
+      "level": 70,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_c",
+      "order": 4,
+      "enabled": true,
+      "name": "C",
+      "category": "Programming Languages",
+      "level": 65,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_ds",
+      "order": 5,
+      "enabled": true,
+      "name": "Data Structures",
+      "category": "Programming Languages",
+      "level": 75,
+      "years": 3,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_rest",
+      "order": 6,
+      "enabled": true,
+      "name": "RESTful API Concepts",
+      "category": "Backend & Integration",
+      "level": 75,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_micro",
+      "order": 7,
+      "enabled": true,
+      "name": "Microservice-Oriented Design",
+      "category": "Backend & Integration",
+      "level": 68,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_modular",
+      "order": 8,
+      "enabled": true,
+      "name": "Modular & Reusable Code",
+      "category": "Backend & Integration",
+      "level": 85,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_etl",
+      "order": 9,
+      "enabled": true,
+      "name": "ETL & Data Pipelines",
+      "category": "Databases & Data Engineering",
+      "level": 78,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_window",
+      "order": 10,
+      "enabled": true,
+      "name": "Window Functions & Aggregations",
+      "category": "Databases & Data Engineering",
+      "level": 82,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_warehouse",
+      "order": 11,
+      "enabled": true,
+      "name": "Data Warehousing",
+      "category": "Databases & Data Engineering",
+      "level": 70,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_powerbi",
+      "order": 12,
+      "enabled": true,
+      "name": "Power BI",
+      "category": "Databases & Data Engineering",
+      "level": 72,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_tableau",
+      "order": 13,
+      "enabled": true,
+      "name": "Tableau",
+      "category": "Databases & Data Engineering",
+      "level": 65,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_docuedge",
+      "order": 14,
+      "enabled": true,
+      "name": "Docuedge",
+      "category": "SmartComm & Enterprise Content",
+      "level": 70,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_ccm",
+      "order": 15,
+      "enabled": true,
+      "name": "CCM / CCE-16",
+      "category": "SmartComm & Enterprise Content",
+      "level": 70,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_xecm",
+      "order": 16,
+      "enabled": true,
+      "name": "xECM",
+      "category": "SmartComm & Enterprise Content",
+      "level": 62,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_ai",
+      "order": 17,
+      "enabled": true,
+      "name": "Artificial Intelligence",
+      "category": "AI & Machine Learning",
+      "level": 78,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_ml",
+      "order": 18,
+      "enabled": true,
+      "name": "Machine Learning",
+      "category": "AI & Machine Learning",
+      "level": 72,
+      "years": 2,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_respai",
+      "order": 19,
+      "enabled": true,
+      "name": "Responsible & Ethical AI",
+      "category": "AI & Machine Learning",
+      "level": 80,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_git",
+      "order": 20,
+      "enabled": true,
+      "name": "Git & GitHub",
+      "category": "Platforms & Tools",
+      "level": 82,
+      "years": 3,
+      "icon": "",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "sk_docker",
+      "order": 21,
+      "enabled": true,
+      "name": "Docker (basics)",
+      "category": "Platforms & Tools",
+      "level": 50,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "sk_sap",
+      "order": 22,
+      "enabled": true,
+      "name": "SAP Basics",
+      "category": "Platforms & Tools",
+      "level": 45,
+      "years": 1,
+      "icon": "",
+      "description": "",
+      "featured": false
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp_deloitte",
+      "order": 0,
+      "enabled": true,
+      "company": "Deloitte",
+      "position": "Analyst, Consulting Services",
+      "employmentType": "Full-time",
+      "location": "Hyderabad, India",
+      "startDate": "2025-09",
+      "endDate": "",
+      "current": true,
+      "description": "Building backend document-processing logic and SQL-driven data workflows for high-volume enterprise systems — where automation, integration and production support meet.",
+      "responsibilities": [
+        "Developed backend document-processing logic in Python to transform, validate and structure high-volume enterprise data for production systems.",
+        "Built and optimised SQL queries — joins, aggregations and window functions — supporting backend data workflows with a hard requirement on accuracy and performance.",
+        "Worked extensively with SmartComm for document composition, template logic and data-driven content generation, integrating backend data sources into scalable document pipelines.",
+        "Designed reusable Python modules for automation, validation and backend integration, improving processing efficiency and cutting manual intervention.",
+        "Applied backend design principles — separation of concerns, modularity, maintainability — while handling sensitive business data under confidentiality and compliance standards.",
+        "Supported production delivery by troubleshooting technical issues, resolving data inconsistencies and meeting delivery timelines.",
+        "Collaborated with developers, analysts and stakeholders to turn requirements into scoped, step-by-step deliverables."
+      ],
+      "achievements": [
+        "Completed Deloitte's BRIDGE Campus Learning Series.",
+        "Took ownership of independent deliverables within the first year of joining."
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "SmartComm",
+        "Git",
+        "Data Pipelines",
+        "Backend Integrations",
+        "Docuedge",
+        "CCM"
+      ],
+      "logo": "",
+      "url": "https://www.deloitte.com",
+      "status": "published"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu_klu",
+      "order": 0,
+      "enabled": true,
+      "institution": "Kalasalingam Academy of Research and Education",
+      "degree": "B.Tech — Computer Science & Engineering",
+      "field": "Artificial Intelligence & Machine Learning",
+      "startDate": "2021-08",
+      "endDate": "2025-05",
+      "grade": "CGPA 8.84",
+      "location": "Madurai, India",
+      "description": "Specialised in AI and Machine Learning alongside core computer science — data structures, databases and systems — with project work grounded in applied ML and data-backed decision systems.",
+      "achievements": [
+        "Published and presented research at IEEE ICIRCA 2025 on satellite-image-based crop recommendation.",
+        "Smart Agriculture Management System — Python and SQL for analysing soil, weather and crop data.",
+        "Crop Recommendation System — Python recommendation logic with SQL-backed data integration.",
+        "Graduated with a CGPA of 8.84."
+      ],
+      "logo": ""
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert_ieee",
+      "order": 0,
+      "enabled": true,
+      "title": "IEEE Certificate of Presentation",
+      "issuer": "IEEE ICIRCA 2025 · RVS College of Engineering, Coimbatore",
+      "issueDate": "2025-06",
+      "expiryDate": "",
+      "credentialId": "",
+      "credentialUrl": "",
+      "image": "",
+      "category": "Research Publication",
+      "description": "Presented \"Smart Agriculture: Satellite Image-based Crop Recommendation using CNN and EfficientNet\" at the 6th International Conference on Inventive Research in Computing Applications, 25–27 June 2025.",
+      "featured": true
+    },
+    {
+      "id": "cert_databricks",
+      "order": 1,
+      "enabled": true,
+      "title": "Databricks Certified Data Engineer Associate",
+      "issuer": "Databricks",
+      "issueDate": "2026-02",
+      "expiryDate": "2028-02",
+      "credentialId": "175114048",
+      "credentialUrl": "",
+      "image": "",
+      "category": "Data Engineering",
+      "description": "",
+      "featured": true
+    },
+    {
+      "id": "cert_ai_fluency",
+      "order": 2,
+      "enabled": true,
+      "title": "Anthropic Certified: AI Fluency Framework & Foundations",
+      "issuer": "Anthropic",
+      "issueDate": "2026-07",
+      "expiryDate": "",
+      "credentialId": "42c9k7t9tvcv",
+      "credentialUrl": "",
+      "image": "",
+      "category": "AI",
+      "description": "AI literacy and foundational concepts, use-case identification for AI in business workflows, assessing AI capabilities and limitations, and responsible, ethical AI adoption.",
+      "featured": true
+    },
+    {
+      "id": "cert_claude_code",
+      "order": 3,
+      "enabled": true,
+      "title": "Anthropic Certified: Claude Code in Action",
+      "issuer": "Anthropic",
+      "issueDate": "",
+      "expiryDate": "",
+      "credentialId": "",
+      "credentialUrl": "",
+      "image": "",
+      "category": "AI",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "cert_claude_101",
+      "order": 4,
+      "enabled": true,
+      "title": "Anthropic Certified: Claude 101",
+      "issuer": "Anthropic",
+      "issueDate": "",
+      "expiryDate": "",
+      "credentialId": "",
+      "credentialUrl": "",
+      "image": "",
+      "category": "AI",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "cert_powerbi",
+      "order": 5,
+      "enabled": true,
+      "title": "Power BI Workshop — AI-Powered Dashboards",
+      "issuer": "OfficeMaster",
+      "issueDate": "2025-09",
+      "expiryDate": "",
+      "credentialId": "",
+      "credentialUrl": "",
+      "image": "",
+      "category": "Analytics",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "cert_be10x",
+      "order": 6,
+      "enabled": true,
+      "title": "be10x AI Tools Workshop",
+      "issuer": "be10x",
+      "issueDate": "",
+      "expiryDate": "",
+      "credentialId": "",
+      "credentialUrl": "",
+      "image": "",
+      "category": "AI",
+      "description": "",
+      "featured": false
+    },
+    {
+      "id": "cert_codechef",
+      "order": 7,
+      "enabled": true,
+      "title": "CodeChef Certification",
+      "issuer": "CodeChef",
+      "issueDate": "",
+      "expiryDate": "",
+      "credentialId": "",
+      "credentialUrl": "",
+      "image": "",
+      "category": "Programming",
+      "description": "",
+      "featured": false
+    }
+  ],
+  "services": [
+    {
+      "id": "svc_backend",
+      "order": 0,
+      "enabled": true,
+      "title": "Backend Engineering",
+      "description": "Python services that transform, validate and structure high-volume enterprise data, built to survive production.",
+      "icon": "Server",
+      "features": [
+        "Python",
+        "Modular Design",
+        "Validation",
+        "Production Support"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_data",
+      "order": 1,
+      "enabled": true,
+      "title": "Data Engineering",
+      "description": "SQL-driven pipelines and ETL workflows — joins, aggregations and window functions tuned for accuracy at volume.",
+      "icon": "Database",
+      "features": [
+        "SQL",
+        "ETL",
+        "Window Functions",
+        "Data Warehousing"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_smartcomm",
+      "order": 2,
+      "enabled": true,
+      "title": "SmartComm & Document Systems",
+      "description": "Template logic and document composition wired directly to backend data sources for enterprise communications.",
+      "icon": "FileText",
+      "features": [
+        "SmartComm",
+        "CCM",
+        "Docuedge",
+        "Template Logic"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_ai",
+      "order": 3,
+      "enabled": true,
+      "title": "Applied AI & Machine Learning",
+      "description": "Identifying where AI genuinely fits a workflow, and assessing model capabilities honestly against their limits.",
+      "icon": "BrainCircuit",
+      "features": [
+        "Machine Learning",
+        "Use-Case Design",
+        "Responsible AI",
+        "Model Evaluation"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_automation",
+      "order": 4,
+      "enabled": true,
+      "title": "Automation & Integration",
+      "description": "Reusable modules that remove manual steps, and backend integrations that keep systems talking to each other.",
+      "icon": "Workflow",
+      "features": [
+        "Reusable Modules",
+        "Backend Integration",
+        "REST Concepts",
+        "Process Automation"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_analytics",
+      "order": 5,
+      "enabled": true,
+      "title": "Analytics & Visualisation",
+      "description": "Turning raw datasets into dashboards people actually make decisions from.",
+      "icon": "LineChart",
+      "features": [
+        "Power BI",
+        "Tableau",
+        "Data Analysis",
+        "Dashboards"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_platforms",
+      "order": 6,
+      "enabled": true,
+      "title": "Enterprise Platforms & Tooling",
+      "description": "Working inside the toolchain enterprise delivery actually runs on, from version control to content platforms.",
+      "icon": "Boxes",
+      "features": [
+        "Git & GitHub",
+        "Docker",
+        "SAP Basics",
+        "xECM"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "svc_practice",
+      "order": 7,
+      "enabled": true,
+      "title": "Engineering Practice",
+      "description": "Clean, maintainable code, careful debugging, and handling sensitive business data the way it should be handled.",
+      "icon": "Shield",
+      "features": [
+        "Clean Code",
+        "Debugging",
+        "Secure Data Handling",
+        "Scalable Design"
+      ],
+      "status": "published"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj_agri",
+      "order": 0,
+      "enabled": true,
+      "title": "Smart Agriculture: Crop Recommendation Using Satellite Images",
+      "slug": "smart-agriculture-crop-recommendation",
+      "shortDescription": "An ML system using CNN and EfficientNet to recommend optimal crops from satellite imagery, remote sensing and soil/weather data. Presented at IEEE ICIRCA 2025.",
+      "fullDescription": "A machine-learning system that recommends optimal crops for farmers by combining satellite imagery with remote sensing and soil/weather data. The work was presented at the 6th International Conference on Inventive Research in Computing Applications (IEEE ICIRCA 2025).",
+      "category": "Machine Learning",
+      "tags": [
+        "Research",
+        "Published"
+      ],
+      "technologies": [
+        "Python",
+        "CNN",
+        "EfficientNet",
+        "Satellite Data",
+        "SQL"
+      ],
+      "coverImage": "",
+      "gallery": [],
+      "videoUrl": "",
+      "githubUrl": "",
+      "liveUrl": "",
+      "caseStudyUrl": "",
+      "year": "2025",
+      "client": "Academic research",
+      "role": "Author & presenter",
+      "challenge": "Crop selection is often based on habit rather than current ground conditions, and ground surveys don't scale across regions.",
+      "solution": "Combined satellite imagery with soil and weather data, using CNN and EfficientNet architectures to classify land conditions and map them to suitable crops.",
+      "process": "",
+      "outcome": "Accepted and presented at IEEE ICIRCA 2025 (25–27 June 2025), RVS College of Engineering, Coimbatore.",
+      "featured": true,
+      "status": "published",
+      "seoTitle": "",
+      "seoDescription": "",
+      "ogImage": ""
+    },
+    {
+      "id": "prj_docpipeline",
+      "order": 1,
+      "enabled": true,
+      "title": "Enterprise Document Processing Pipeline",
+      "slug": "enterprise-document-processing-pipeline",
+      "shortDescription": "Backend document-processing pipeline built at Deloitte using Python and SmartComm — validating, transforming and structuring high-volume enterprise data.",
+      "fullDescription": "A production backend pipeline that validates, transforms and structures high-volume enterprise data for document generation, built from reusable, modular Python components integrated with SmartComm.",
+      "category": "Backend",
+      "tags": [
+        "Automation",
+        "Enterprise"
+      ],
+      "technologies": [
+        "Python",
+        "SmartComm",
+        "SQL",
+        "Automation"
+      ],
+      "coverImage": "",
+      "gallery": [],
+      "videoUrl": "",
+      "githubUrl": "",
+      "liveUrl": "",
+      "caseStudyUrl": "",
+      "year": "2025",
+      "client": "Deloitte (client work)",
+      "role": "Analyst, Consulting Services",
+      "challenge": "High-volume enterprise data arriving in inconsistent shapes had to become reliable, compliant documents without manual intervention.",
+      "solution": "Modular Python processing components with explicit validation stages, plus SmartComm template logic driven directly from backend data sources.",
+      "process": "",
+      "outcome": "Improved processing efficiency and reduced manual intervention in production document workflows.",
+      "featured": true,
+      "status": "published",
+      "seoTitle": "",
+      "seoDescription": "",
+      "ogImage": ""
+    },
+    {
+      "id": "prj_dashboards",
+      "order": 2,
+      "enabled": true,
+      "title": "AI-Powered Interactive Dashboards",
+      "slug": "ai-powered-interactive-dashboards",
+      "shortDescription": "Interactive Power BI dashboards turning raw datasets into clear, decision-ready views.",
+      "fullDescription": "Interactive dashboards built in Power BI, translating raw datasets into visual, decision-ready analytics with AI-assisted exploration.",
+      "category": "Data Analytics",
+      "tags": [
+        "Analytics"
+      ],
+      "technologies": [
+        "Power BI",
+        "SQL",
+        "Data Modelling"
+      ],
+      "coverImage": "",
+      "gallery": [],
+      "videoUrl": "",
+      "githubUrl": "",
+      "liveUrl": "",
+      "caseStudyUrl": "",
+      "year": "2025",
+      "client": "",
+      "role": "Developer",
+      "challenge": "",
+      "solution": "",
+      "process": "",
+      "outcome": "",
+      "featured": false,
+      "status": "published",
+      "seoTitle": "",
+      "seoDescription": "",
+      "ogImage": ""
+    }
+  ],
+  "testimonials": [],
+  "socialLinks": [
+    {
+      "id": "soc_li",
+      "order": 0,
+      "enabled": true,
+      "platform": "LinkedIn",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/peyyalamanideep/",
+      "icon": "Linkedin",
+      "handle": "peyyalamanideep",
+      "featured": true
+    },
+    {
+      "id": "soc_gh",
+      "order": 1,
+      "enabled": true,
+      "platform": "GitHub",
+      "label": "GitHub",
+      "url": "https://github.com/manideeppeyyala",
+      "icon": "Github",
+      "handle": "manideeppeyyala",
+      "featured": true
+    },
+    {
+      "id": "soc_mail",
+      "order": 2,
+      "enabled": true,
+      "platform": "Email",
+      "label": "Email",
+      "url": "mailto:manideepyadav380@gmail.com",
+      "icon": "Mail",
+      "handle": "manideepyadav380@gmail.com",
+      "featured": true
+    },
+    {
+      "id": "soc_yt",
+      "order": 3,
+      "enabled": true,
+      "platform": "YouTube",
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@vlogingwithmani2003",
+      "icon": "Youtube",
+      "handle": "@vlogingwithmani2003",
+      "featured": false
+    },
+    {
+      "id": "soc_ig",
+      "order": 4,
+      "enabled": true,
+      "platform": "Instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/vloggingwithmani/",
+      "icon": "Instagram",
+      "handle": "@vloggingwithmani",
+      "featured": false
+    },
+    {
+      "id": "soc_fb",
+      "order": 5,
+      "enabled": true,
+      "platform": "Facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/mani.royals.33/",
+      "icon": "Facebook",
+      "handle": "",
+      "featured": false
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal_portrait",
+      "order": 0,
+      "enabled": true,
+      "title": "Peyyala Manideep",
+      "caption": "SmartComm Developer & AI/Data Engineer at Deloitte.",
+      "image": "/gallery/portrait.jpg",
+      "video": "",
+      "category": "Profile",
+      "date": "",
+      "featured": true
+    },
+    {
+      "id": "gal_bridge",
+      "order": 1,
+      "enabled": true,
+      "title": "Deloitte BRIDGE Campus Learning Series",
+      "caption": "Completing Deloitte's BRIDGE Campus Learning Series — the onboarding programme for new campus hires into Consulting.",
+      "image": "/gallery/deloitte-bridge.jpg",
+      "video": "",
+      "category": "Milestone",
+      "date": "2025-08",
+      "featured": false
+    }
+  ],
+  "resume": {
+    "enabled": true,
+    "buttonLabel": "Download Résumé",
+    "fileUrl": "/Peyyala_Manideep_Resume.pdf",
+    "fileName": "Peyyala_Manideep_Resume.pdf",
+    "updatedAt": "",
+    "note": ""
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Let's build something reliable.",
+    "description": "Open to backend, data engineering and AI-adjacent opportunities. Drop a message and I'll get back to you.",
+    "formEnabled": true,
+    "successMessage": "Thanks — your message landed. I'll get back to you shortly."
+  },
+  "seo": {
+    "defaultTitle": "Peyyala Manideep — SmartComm Developer & AI/Data Engineer",
+    "titleTemplate": "%s · Peyyala Manideep",
+    "defaultDescription": "SmartComm Developer & AI/Data Engineer at Deloitte. Python, SQL-driven backend logic, document-processing pipelines and automation for enterprise systems.",
+    "keywords": [
+      "Peyyala Manideep",
+      "SmartComm Developer",
+      "AI Engineer",
+      "Data Engineer",
+      "Python Developer",
+      "Deloitte",
+      "Backend Developer"
+    ],
+    "ogImage": "",
+    "twitterHandle": "",
+    "canonicalUrl": "",
+    "robotsIndex": true,
+    "structuredDataEnabled": true,
+    "analyticsId": "",
+    "analyticsProvider": "none",
+    "analyticsDomain": ""
+  },
+  "theme": {
+    "accent": "gold",
+    "surface": "navy",
+    "radius": "soft",
+    "density": "comfortable",
+    "motion": "full",
+    "heroStyle": "particles",
+    "fontScale": "md"
+  }
+}

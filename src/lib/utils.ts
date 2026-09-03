@@ -61,11 +61,33 @@ export function initials(name: string): string {
     .join("");
 }
 
-/** Absolute site URL — never hard-code the production domain. */
+/**
+ * Absolute site URL — never hard-code the production domain.
+ *
+ * Resolution order matters:
+ *  1. NEXT_PUBLIC_SITE_URL          — an explicit override (a custom domain)
+ *  2. VERCEL_PROJECT_PRODUCTION_URL — the project's *stable* production
+ *                                     domain, e.g. my-site.vercel.app
+ *  3. VERCEL_URL                    — the per-deployment URL, which changes
+ *                                     on every build (…-cs6sn2i1o.vercel.app)
+ *  4. localhost
+ *
+ * (2) is what makes canonical tags, OpenGraph URLs and sitemap.xml correct
+ * out of the box. Falling straight through to (3) meant every deploy
+ * published a different canonical URL — bad for SEO and for link previews,
+ * and easy to miss because the site itself still looks fine.
+ */
 export function siteUrl(path = ""): string {
-  const base =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "") ||
-    "http://localhost:3000";
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  const productionDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  const deploymentDomain = process.env.VERCEL_URL?.trim();
+
+  const base = (
+    explicit ||
+    (productionDomain ? `https://${productionDomain}` : "") ||
+    (deploymentDomain ? `https://${deploymentDomain}` : "") ||
+    "http://localhost:3000"
+  ).replace(/\/$/, "");
+
   return path ? `${base}${path.startsWith("/") ? path : `/${path}`}` : base;
 }
